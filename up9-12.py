@@ -2,9 +2,10 @@ string = list(input("문자열 입력: "))
 
 alphabet = dict()
 
+for ch in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+    alphabet[ch]=0
+
 for ch in string:
-    if ch.isalpha()==False:
-        continue
     if ch not in alphabet:
         alphabet[ch]=1
     else:
@@ -14,8 +15,6 @@ k_list = []
 
 for key in alphabet.keys():
     k_list.append((key))
-
-#= list(alphabet.keys())
 
 k_list.sort()
 
@@ -31,5 +30,9 @@ for key in k_list:
 
 
 
-# print(ord("A"))
-# print(ord("Z"))
+
+# get(값,0)
+
+"""
+for
+"""
