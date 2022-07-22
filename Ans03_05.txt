@@ -1,0 +1,12 @@
+error
+
+ans:
+cd /Users/mac/Documents/GitHub/test0715 ; /usr/bin/env /Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/bin/java -XX:+ShowCodeDetailsInExceptionMessages -cp /Users/mac/Documents/GitHub/test0715/bin Ans03_05 
+Exception in thread "main" java.util.UnknownFormatConversionException: Conversion = '6'
+        at java.base/java.util.Formatter.checkText(Formatter.java:2732)
+        at java.base/java.util.Formatter.parse(Formatter.java:2718)
+        at java.base/java.util.Formatter.format(Formatter.java:2655)
+        at java.base/java.io.PrintStream.format(PrintStream.java:1209)
+        at java.base/java.io.PrintStream.printf(PrintStream.java:1105)
+        at Ans03_05.main(Ans03_05.java:9)
+mac@Suyeonui-MacBookPro test0715 % 
