@@ -4,7 +4,7 @@ public class Ans05_10 {
 	public static void main(String[] args) {
 		char ch;
 		Scanner s = new Scanner(System.in);
-		System.out.print("¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.print("ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½: ");
 		ch = s.next().charAt(0);
 		
 		switch (ch){
@@ -13,10 +13,35 @@ public class Ans05_10 {
 			case 'i':
 			case 'o':
 			case 'u':
-				System.out.println("¸ðÀ½");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½");
 				break;
 			default:
-				System.out.println("ÀÚÀ½");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½");
+		}
+		
+	}
+}
+
+
+
+
+
+public class Ans05_10 {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in)
+		System.out.print("ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½: ");
+		ch = s.next().charAt(0);
+		
+		switch (ch){
+			case a:
+			case e:
+			case i:
+			case o:
+			case u:
+				System.out.println("ï¿½ï¿½ï¿½ï¿½");
+				
+			default:
+				System.out.println("ï¿½ï¿½ï¿½ï¿½");
 		}
 		
 	}
