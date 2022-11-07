@@ -1,0 +1,5 @@
+f = open("live.txt", "rt")
+f.seek(17,0)
+text = f.read()
+f.close()
+print(text)
