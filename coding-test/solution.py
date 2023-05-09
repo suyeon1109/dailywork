@@ -26,7 +26,7 @@
 # print(solution(["i", "water", "drink"],["want", "to"],["i", "want", "to", "drink", "water"]))
 
 
-def solution(s):
+#def solution(s):
     # length = []
     # x = s[0]
     # countx=1
@@ -67,20 +67,46 @@ def solution(s):
     # return length
 
 
-    answer=0
-    a=0
-    b=0
-    for i in s:
-        if a == b:
-            answer += 1
-            temp = i
-        if i==temp:
-            a += 1
-        else:
-            b += 1
+#     answer=0
+#     a=0
+#     b=0
+#     for i in s:
+#         if a == b:
+#             answer += 1
+#             temp = i
+#         if i==temp:
+#             a += 1
+#         else:
+#             b += 1
             
-    return answer
+#     return answer
 
-print(solution("banana"))
-print(solution("abracadabra"))
-print(solution("aaabbaccccabba"))
+# print(solution("banana"))
+# print(solution("abracadabra"))
+# print(solution("aaabbaccccabba"))
+
+
+
+
+
+
+def solution(my_string, queries):
+    # answer = ""
+    reverse = ""
+    for i in range(len(queries)):
+        for j in range(queries[i][1]-queries[i][0]+1):
+            reverse+=my_string[queries[i][1]-j]
+        # print("reverse:", reverse)
+        my_string=my_string[:queries[i][0]]+reverse+my_string[queries[i][1]+1:]
+        # print("my_string",my_string)
+        reverse=""
+    return my_string
+
+"""
+reverse: mr
+reverse: progmrer
+reverse: aspro
+reverse: maspr
+"""
+
+print("answer",solution("rermgorpsam", [[2, 3], [0, 7], [5, 9], [6, 10]]))
