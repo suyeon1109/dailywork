@@ -1,17 +1,16 @@
 public class SubclassPractice {
- 
     public static void main(String[] args) {
         // no constructor
         RacingCar rc = new RacingCar();
         rc.setCar(1, "12가 3456");
         rc.setSpeed(300);
         
-        System.out.println( rc.getNum() );
-        System.out.println( rc.getcarNumber() );
-        System.out.println( rc.getSpeed() );
+        System.out.println(rc.getNum());
+        System.out.println(rc.getcarNumber());
+        System.out.println(rc.getSpeed());
     }
 }
- 
+
 class Car {
     private int num;
     private String carNumber;
@@ -32,7 +31,7 @@ class Car {
         return this.carNumber;
     }
 }
- 
+
 class RacingCar extends Car {
     private int max_speed;
     
