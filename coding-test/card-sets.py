@@ -18,7 +18,7 @@ If you create a goal with the words written in cards1 and cards2, select â€œYesâ
 If you cannot create it, please complete the solution function that returns "No".
 """
 
-def solution(cards1, cards2, goal):
+def solution1(cards1, cards2, goal):
     for each in goal:
         if len(cards1)!=0:
             if each==cards1[0]:
@@ -36,4 +36,37 @@ def solution(cards1, cards2, goal):
                 return "No"
     return "Yes"
 
-print(solution(["i", "drink", "water"], ["want", "to"], ["i", "want", "to", "drink", "water"]))
+print(solution1(["i", "drink", "water"], ["want", "to"], ["i", "want", "to", "drink", "water"]))
+
+
+"""
+Given two strings s and skip, and a natural number index, we want to create a string according 
+to the following rules. The rules for passwords are as follows:
+
+Changes each alphabet in string s to the alphabet following the index.
+If the alphabet after the index exceeds z, it returns to a.
+Skips everything except the alphabet in skip.
+For example, when s = "aukks", skip = "wbqd", index = 5, the alphabet 5 places behind a is f, 
+but in [b, c, d, e, f], 'b' and 'd' is included in skip, so it is not counted. Therefore, 
+except for 'b' and 'd', the alphabet that is 5 places behind 'a' becomes 'h' in the order [c, e, f, g, h]. 
+If you change the remaining "ukks" according to the rule above, it becomes "appy" and the result is "happy".
+
+When two strings s and skip, and a natural number index are given as parameters, 
+complete the solution function so that it returns the result of converting s according to the above rules.
+"""
+
+def solution2(s, skip, index):
+    # run time error
+    alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    for i in range(len(skip)):
+        alphabet_list.remove(skip[i])
+    answer = ''
+
+    for i in range(len(s)):
+        idx = alphabet_list.index(s[i])+index
+        if idx > len(alphabet_list)-1:
+            idx = idx-len(alphabet_list)
+        answer+=alphabet_list[idx]
+    return answer
+
+print(solution2("aukks", "wbqd", 5))
