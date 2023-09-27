@@ -15,7 +15,7 @@ def solution(t, p):
     for i in range(len(t)-length+1):
         substring = t[i:i+length]
         compare.append(int(substring))
-    print(compare)
+    # print(compare)
     
     for each in compare:
         if each<=int(p):
@@ -52,12 +52,12 @@ def solution2(t, p):
     length = len(p)
     for i in range(length):
         p_sum += int(p[i])
-    print(p_sum)
+    # print(p_sum)
     
     segments = []
     for i in range(len(t)-length+1):
         segments.append(t[i:i+length])
-    print(segments)
+    # print(segments)
     
     compare = []
     for each in segments:
@@ -65,9 +65,26 @@ def solution2(t, p):
         for i in range(length):
             each_sum+=int(each[i])
         compare.append(each_sum)
-    print(compare)
+    # print(compare)
     
     for each in compare:
         if each<=p_sum:
             answer+=1
     return answer
+
+
+"""
+<test cases>
+(t, p)   results
+("3141592", "271")      2
+("500220839878", "7")	8
+("10203", "15")         3
+"""
+
+print(solution("3141592", "271"))
+print(solution("500220839878", "7"))
+print(solution("10203", "15"))
+
+print(solution2("3141592", "271"))
+print(solution2("500220839878", "7"))
+print(solution2("10203", "15"))
