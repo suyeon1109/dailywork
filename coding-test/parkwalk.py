@@ -20,19 +20,18 @@ Please complete the solution function to return.
 """
 
 def solution(park, routes):
-    x, y, h, m = 0,  0, len(park[0]), len(park)
+    h, m = len(park[0])-1, len(park)-1
+    origin = [[i,j] for i in range(len(park)) for j in range(len(park[i])) if park[i][j]=="S"]
+    x, y = origin[0][0], origin[0][1]
+    # print(x,y)
+    
     for i in range(len(park)):
         park[i] = list(park[i])
     print(park)
         
-    obstacles = []
-    try:
-        for each in park:
-            obstacles.append(park.index('X'))      
-    except ValueError:
-        obstacles=[]
-    
+    obstacles=[[i,j] for i in range(len(park)) for j in range(len(park[i])) if park[i][j]=="X"]
     print(obstacles)
+    
     for each in routes:
         direction = each[0]
         unit = int(each[2])
@@ -56,4 +55,4 @@ def solution(park, routes):
                 continue
             else:
                 y-=unit
-    return [x,y]
+    return [y,x]
