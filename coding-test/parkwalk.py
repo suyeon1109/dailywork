@@ -38,21 +38,33 @@ def solution(park, routes):
         if direction=="E":
             if (unit+x)>h:
                 continue
+            for each in obstacles:
+                if (each[1]<=unit+x) and (each[1]>=x) and each[0]==y:
+                    continue
             else:
                 x+=unit
         elif direction=="W":
             if (x-unit)<0:
                 continue
+            for each in obstacles:
+                if (each[1]>=x-unit) and (each[1]<=x) and each[0]==y:
+                    continue
             else:
                 x-=unit
         elif direction=="S":
             if (y+unit)>m:
                 continue
+            for each in obstacles:
+                if (each[0]<=unit+y) and (each[0]>=y) and each[1]==x:
+                    continue
             else:
                 y+=unit
         elif direction=="N":
             if (y-unit)<0:
                 continue
+            for each in obstacles:
+                if (each[0]>=y-unit) and (each[0]<=y) and each[1]==x:
+                    continue
             else:
                 y-=unit
     return [y,x]
