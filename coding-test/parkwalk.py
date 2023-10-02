@@ -23,14 +23,14 @@ def solution(park, routes):
     h, m = len(park[0])-1, len(park)-1
     origin = [[i,j] for i in range(len(park)) for j in range(len(park[i])) if park[i][j]=="S"]
     x, y = origin[0][0], origin[0][1]
-    # print(x,y)
+    print("x:",x,"y:",y)
     
     for i in range(len(park)):
         park[i] = list(park[i])
-    print(park)
+    print("park:", park)
         
     obstacles=[[i,j] for i in range(len(park)) for j in range(len(park[i])) if park[i][j]=="X"]
-    print(obstacles)
+    print("obs:", obstacles)
     
     for each in routes:
         direction = each[0]
@@ -68,3 +68,8 @@ def solution(park, routes):
             else:
                 y-=unit
     return [y,x]
+
+
+print("reult1", solution(["SOO","OOO","OOO"], ["E 2","S 2","W 1"]))         #[2,1]
+print("reult2", solution(["SOO","OXX","OOO"], ["E 2","S 2","W 1"]))         #[0,1]
+print("reult3", solution(["OSO","OOO","OXO","OOO"], ["E 2","S 3","W 1"]))   #[0,0]
