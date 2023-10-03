@@ -17,6 +17,10 @@ containing commands to be performed by the robot dog, are given as parameters,
 the location where the robot dog is placed after executing all commands is 
 stored in an array in the order of [vertical coordinates, horizontal coordinates]. 
 Please complete the solution function to return.
+
+
+main point = dealing with the obstacles.
+!! comparing the location of user and obstacle 
 """
 
 def solution(park, routes):
@@ -35,12 +39,13 @@ def solution(park, routes):
     for each in routes:
         direction = each[0]
         unit = int(each[2])
+        print(direction, unit)
         if direction=="E":
-            if (unit+x)>h:
-                continue
             for each in obstacles:
                 if (each[1]<=unit+x) and (each[1]>=x) and each[0]==y:
                     continue
+            if (unit+x)>h:
+                continue
             else:
                 x+=unit
         elif direction=="W":
@@ -52,19 +57,19 @@ def solution(park, routes):
             else:
                 x-=unit
         elif direction=="S":
-            if (y+unit)>m:
-                continue
             for each in obstacles:
                 if (each[0]<=unit+y) and (each[0]>=y) and each[1]==x:
                     continue
+            if (y+unit)>m:
+                continue
             else:
                 y+=unit
         elif direction=="N":
-            if (y-unit)<0:
-                continue
             for each in obstacles:
                 if (each[0]>=y-unit) and (each[0]<=y) and each[1]==x:
                     continue
+            if (y-unit)<0:
+                continue
             else:
                 y-=unit
     return [y,x]
