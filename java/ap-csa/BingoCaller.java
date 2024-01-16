@@ -4,8 +4,9 @@ public class BingoCaller {
 
     // part a
     public static boolean hasBeenCalled(int num) {
+        // num represents element
         if (numbersCalled.length==75) {
-            return numbersCalled[num+1];
+            return numbersCalled[num-1];
         } else {
             return false;
         }
@@ -13,13 +14,13 @@ public class BingoCaller {
 
     // part b
     public static int getRandomNumber(String letter) {
-        if (letter=="B") {
+        if (letter.equals("B")) {
             return (int)Math.random()*15+1;
-        } else if (letter=="I") {
+        } else if (letter.equals("I")) {
             return (int)Math.random()*15+16;
-        } else if (letter=="N") {
+        } else if (letter.equals("N")) {
             return (int)Math.random()*15+31;
-        } else if (letter=="G") {
+        } else if (letter.equals("G")) {
             return (int)Math.random()*15+46;
         } else {
             return (int)Math.random()*15+61;
@@ -28,9 +29,13 @@ public class BingoCaller {
 
     // part c 
     public static String makeCall() {
-        int letterIndex = (int)Math.random()*4;
-        String letter = 
+        String letter = COLUMN_LETTERS[(int)Math.random()*4+1];
         int num = getRandomNumber(letter);
-
+        if (hasBeenCalled(num)==true) {
+            return ("previously called.");
+        } else {
+            numbersCalled[num]=true;
+            return (letter+num);
+        }
     }
 }
