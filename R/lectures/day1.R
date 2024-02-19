@@ -30,8 +30,8 @@ sum / length(dist)
 
 which(dist == 85)
 
-install.packages("downloader")
-library(downloader)
-url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleMiceWeights.csv"
-filename <- "femaleMiceWeights.csv"
-download(url, destfile = filename)
+# install.packages("downloader")
+# library(downloader)
+# url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleMiceWeights.csv"
+# filename <- "femaleMiceWeights.csv"
+# download(url, destfile = filename)
